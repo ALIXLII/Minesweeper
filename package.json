@@ -1,0 +1,30 @@
+{
+  "name": "challenge_4",
+  "version": "1.0.0",
+  "description": "Minesweeper",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js",
+    "build": "webpack -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mysql": "^2.16.0",
+    "nodemon": "^1.18.4",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "sequelize": "^4.38.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.17.1",
+    "webpack-cli": "^3.1.0"
+  }
+}
