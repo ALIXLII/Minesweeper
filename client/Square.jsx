@@ -6,8 +6,7 @@ class Square extends React.Component {
     super(props);
     this.state = {
       coordinates: props.coordinates,
-      number: Math.floor(Math.random() * Math.floor(2)),
-      mine: false
+      mine: ['o', 'o', 'o', 'x']
     }
   }
 
@@ -20,7 +19,7 @@ class Square extends React.Component {
           x.style.display = "inline";
         }
       }}>
-      <div id={this.state.coordinates} className={styles.mine}>{this.state.number}</div>
+      <div id={this.state.coordinates} className={styles.mine}>{this.state.mine[Math.floor(Math.random() * 4)]}</div>
     </div>)
   }
 }
