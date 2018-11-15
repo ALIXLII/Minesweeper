@@ -11,22 +11,6 @@ class Board extends React.Component {
     }
   }
 
-  /*<div>
-    <span className={ styles.square }>1</span>
-    <span className={ styles.square }>2</span>
-    <span className={ styles.square }>3</span>
-  </div>
-  <div className = {styles.row}>
-    <span className={ styles.square }>4</span>
-    <span className={ styles.square }>5</span>
-    <span className={ styles.square }>6</span>
-  </div>
-  <div className = {styles.row}>
-    <span className={ styles.square }>7</span>
-    <span className={ styles.square }>8</span>
-    <span className={ styles.square }>9</span>
-  </div>*/
-
   render() {
     return (<div>
       {this.state.beginner.map((x, i) => <div className= {styles.row}>{this.state.beginner.map((x, j) => <Square coordinates={[i, j]}/>)}</div>)}
