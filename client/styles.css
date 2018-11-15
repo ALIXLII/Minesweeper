@@ -1,9 +1,11 @@
 .square {
+  height: 30px;
+  width: 30px;
+  display: inline-block;
   border: 1px solid;
-  padding: 10px 15px 10px 15px;
   text-align: center;
 }
 
-.row {
-  padding-top: 20px;
+.mine {
+  display: none;
 }

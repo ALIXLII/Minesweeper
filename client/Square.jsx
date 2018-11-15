@@ -5,22 +5,23 @@ class Square extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      coordinates: props.coordinates,
       number: Math.floor(Math.random() * Math.floor(2)),
       mine: false
     }
   }
 
   render() {
-    return (<span className={styles.square} onClick={() => {
-        var x = document.getElementById("number");
-        if (x.style.display === "none") {
-          x.style.display = "inline";
-        } else {
+    return (<div className={styles.square} onClick={() => {
+        var x = document.getElementById(this.state.coordinates);
+        if (x.style.display === "inline") {
           x.style.display = "none";
+        } else {
+          x.style.display = "inline";
         }
       }}>
-      <span id="number" className={styles.mine}>{this.state.number}</span>
-    </span>)
+      <div id={this.state.coordinates} className={styles.mine}>{this.state.number}</div>
+    </div>)
   }
 }
 

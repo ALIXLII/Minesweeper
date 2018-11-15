@@ -29,7 +29,7 @@ class Board extends React.Component {
 
   render() {
     return (<div>
-      {this.state.beginner.map(x => <div className = {styles.row}>{this.state.beginner.map(x => <Square/>)}</div>)}
+      {this.state.beginner.map((x, i) => <div className={styles.row}>{this.state.beginner.map((x, j) => <Square coordinates={[i, j]}/>)}</div>)}
     </div>)
   }
 }
