@@ -1,3 +1,10 @@
-#square {
-  margin: 2em 2em 6em 2em;
+.square {
+  height: 20px;
+  border: 1px solid;
+  padding: 10px 15px 10px 15px;
+  text-align: center;
+}
+
+.row {
+  padding-top: 20px;
 }
