@@ -10,10 +10,9 @@ class Square extends React.Component {
     }
   }
 
-  showNumber() {
+  showNumber(coor, set) {
     //console.log(this.state.coordinates, document.getElementById(this.state.coordinates).title);
     var count = 0;
-    var coor = this.state.coordinates;
     if (document.getElementById(coor).title === 'o') {
       // 1
       if (document.getElementById([
@@ -91,15 +90,136 @@ class Square extends React.Component {
       ]).title === 'x') {
         count++;
       }
-    }
-    if (count > 0) {
-      this.setState({mine: count})
+      if (count > 0) {
+        this.setState({mine: count})
+        console.log(coor)
+      } else {
+        console.log('zero')
+        // if 0 mines around reveal spaces around
+        // var oldSetSize = set.size;
+        // var newSet = set.add(coor.join());
+        // console.log('now', oldSetSize, newSet.size)
+        //  1
+        // if (document.getElementById([
+        //   coor[0] - 1,
+        //   coor[1] - 1
+        // ]) && document.getElementById([
+        //   coor[0] - 1,
+        //   coor[1] - 1
+        // ]).title !== 'x') {
+        //   if (newSet.size > oldSetSize) {
+        //     this.showNumber([
+        //       coor[0] - 1,
+        //       coor[1] - 1
+        //     ], newSet)
+        //   }
+        // }
+        //  2
+        // if (document.getElementById([
+        //   coor[0] - 1,
+        //   coor[1]
+        // ]) && document.getElementById([
+        //   coor[0] - 1,
+        //   coor[1]
+        // ]).title !== 'x') {
+        //   if (newSet.size > oldSetSize) {
+        //     this.showNumber([
+        //       coor[0] - 1,
+        //       coor[1]
+        //     ], newSet)
+        //   }
+        // }
+        // 3
+        // if (document.getElementById([
+        //   coor[0] - 1,
+        //   coor[1] + 1
+        // ]) && document.getElementById([
+        //   coor[0] - 1,
+        //   coor[1] + 1
+        // ]).title !== 'x') {
+        //   if (newSet.size > oldSetSize) {
+        //     this.showNumber([
+        //       coor[0] - 1,
+        //       coor[1] + 1
+        //     ], newSet)
+        //   }
+        // }
+        // 4
+        // if (document.getElementById([
+        //   coor[0], coor[1] - 1
+        // ]) && document.getElementById([
+        //   coor[0], coor[1] - 1
+        // ]).title !== 'x') {
+        //   if (newSet.size > oldSetSize) {
+        //     this.showNumber([
+        //       coor[0], coor[1] - 1
+        //     ], newSet)
+        //   }
+        // }
+        // 5
+        // if (document.getElementById([
+        //   coor[0], coor[1] + 1
+        // ]) && document.getElementById([
+        //   coor[0], coor[1] + 1
+        // ]).title !== 'x') {
+        //   if (newSet.size > oldSetSize) {
+        //     this.showNumber([
+        //       coor[0], coor[1] + 1
+        //     ], newSet)
+        //   }
+        // }
+        // 6
+        // if (document.getElementById([
+        //   coor[0] + 1,
+        //   coor[1] - 1
+        // ]) && document.getElementById([
+        //   coor[0] + 1,
+        //   coor[1] - 1
+        // ]).title !== 'x') {
+        //   if (newSet.size > oldSetSize) {
+        //     this.showNumber([
+        //       coor[0] + 1,
+        //       coor[1] - 1
+        //     ], newSet)
+        //   }
+        // }
+        // 7
+        // if (document.getElementById([
+        //   coor[0] + 1,
+        //   coor[1]
+        // ]) && document.getElementById([
+        //   coor[0] + 1,
+        //   coor[1]
+        // ]).title !== 'x') {
+        //   if (newSet.size > oldSetSize) {
+        //     this.showNumber([
+        //       coor[0] + 1,
+        //       coor[1]
+        //     ], newSet)
+        //   }
+        // }
+        // 8
+        // if (document.getElementById([
+        //   coor[0] + 1,
+        //   coor[1] + 1
+        // ]) && document.getElementById([
+        //   coor[0] + 1,
+        //   coor[1] + 1
+        // ]).title !== 'x') {
+        //   if (newSet.size > oldSetSize) {
+        //     this.showNumber([
+        //       coor[0] + 1,
+        //       coor[1] + 1
+        //     ], newSet)
+        //   }
+        // }
+      }
     }
   }
 
   render() {
     return (<div className={styles.square} onClick={() => {
-        this.showNumber();
+        this.showNumber(this.state.coordinates);
         var x = document.getElementById(this.state.coordinates);
         if (x.style.display === "inline") {
           x.style.display = "none";
